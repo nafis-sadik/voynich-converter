@@ -1,17 +1,23 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-
-__version__ = '0.1'
-
 from starlette.staticfiles import StaticFiles
+import WebApplication.Controllers
 
-app = FastAPI()
+from WebApplication.Controllers.VideoController import router
 
+# Create the app
+app = FastAPI(
+    title='Voynich Converter',
+    version='1.0.0'
+)
+
+# Add origins in this array to allow them only
 origins = [
     "http://localhost",
     "http://localhost:8080",
 ]
 
+# Add middlewares, origin also comes as middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -20,6 +26,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount specific folders
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-import WebApplication.Controllers
+# Enable routing
+app.include_router(router)
+

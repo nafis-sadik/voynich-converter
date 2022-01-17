@@ -1,11 +1,14 @@
-from WebApplication import app
+from WebApplication.Controllers import router
+from WebApplication.Model.ItemModel import Item
 
 
-@app.get('/')
-async def hello_world():  # put application's code here
-    return 'Hello World!'
+@router.get('/Video/<video_name>')
+async def hello_world(video_name: str):
+    return f'I ❤ {video_name}!'
 
 
-@app.get('/Convert/<name>')
-async def hello_buddy(name: str):  # put application's code here
-    return {f'Hello {name}!'}
+@router.post('/Video')
+async def hello_buddy(item: Item):
+    item.name = 'Carew Old Rum'
+    item.price = 1100
+    return item
