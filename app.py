@@ -1,12 +1,13 @@
-from fastapi import FastAPI
+import os
 
-app = FastAPI()
+import uvicorn
+
+from WebApplication import app
 
 
-@app.get('/')
-async def hello_world():  # put application's code here
-    return 'Hello World!'
-
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    uvicorn.run(app=app, host='0.0.0.0', port=port)
 # Uses uvicoirn server
 # Swagger at following links
 #   http://127.0.0.1:8000/redoc
