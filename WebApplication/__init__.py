@@ -1,11 +1,11 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.staticfiles import StaticFiles
-import WebApplication.Controllers
 
-from WebApplication.Controllers.VideoController import router
 
 # Create the app
+from WebApplication.Controllers import router
+
 app = FastAPI(
     title='Voynich Converter',
     version='1.0.0'
