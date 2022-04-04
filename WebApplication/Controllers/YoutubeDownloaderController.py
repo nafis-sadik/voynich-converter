@@ -5,11 +5,11 @@ from WebApplication.Model.YoutubeVideoDetails import YoutubeVideoDetails
 
 youtube = APIRouter(prefix='/yt')
 
+
 @youtube.post('/')
 async def cache_video(video_details: YoutubeVideoDetails):
     try:
         video: YouTube = YouTube(video_details.url)
-        print('video.title', video is None)
         video_details.title = video.title
         video_details.author = video.author
         video_details.description = video.description
@@ -20,6 +20,7 @@ async def cache_video(video_details: YoutubeVideoDetails):
         return video_details
     except Exception as e:
         return str(e)
+
 
 @youtube.get('/video/{video_url:str}')
 async def download_video(video_url: str):
