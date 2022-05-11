@@ -4,7 +4,7 @@ from starlette.staticfiles import StaticFiles
 
 
 # Create the app
-from WebApplication.Controllers import router
+from controllers import router
 
 app = FastAPI(
     title='Voynich Converter',

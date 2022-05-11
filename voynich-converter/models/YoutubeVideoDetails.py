@@ -12,3 +12,4 @@ class YoutubeVideoDetails(BaseModel):
     length: Optional[str]
     views: Optional[str]
     thumbnail: Optional[str]
+    streams: Optional[object]
