@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>45df6d8e-4e28-42c2-8a53-a198d7969192</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>server.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>voynich-converter</Name>
+    <Name>web-api</Name>
     <RootNamespace>voynich-converter</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
     <TestFramework>pytest</TestFramework>
