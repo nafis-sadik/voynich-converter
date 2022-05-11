@@ -7,7 +7,7 @@ youtube = APIRouter(prefix='/yt')
 
 
 @youtube.post('/')
-async def cache_video(video_details: YoutubeVideoDetails):
+async def video_details(video_details: YoutubeVideoDetails):
     try:
         video: YouTube = YouTube(video_details.url)
         video_details.title = video.title
