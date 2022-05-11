@@ -29,8 +29,8 @@
     <Compile Include="server.py" />
     <Compile Include="controllers\YouTubeController.py" />
     <Compile Include="controllers\__init__.py" />
-    <Compile Include="model\YoutubeVideoDetails.py" />
-    <Compile Include="model\__init__.py" />
+    <Compile Include="models\YoutubeVideoDetails.py" />
+    <Compile Include="models\__init__.py" />
     <Compile Include="program.py" />
   </ItemGroup>
   <ItemGroup>
@@ -47,7 +47,7 @@
   <ItemGroup>
     <Folder Include="static\" />
     <Folder Include="controllers\" />
-    <Folder Include="model\" />
+    <Folder Include="models\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
