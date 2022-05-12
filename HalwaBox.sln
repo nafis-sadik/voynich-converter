@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "web-api", "web-api\web-api.pyproj", "{45DF6D8E-4E28-42C2-8A53-A198D7969192}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Repositories", "Repositories\Repositories.pyproj", "{20EA9E53-1FAD-4F6C-96DF-39F6CF689632}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{45DF6D8E-4E28-42C2-8A53-A198D7969192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45DF6D8E-4E28-42C2-8A53-A198D7969192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EA9E53-1FAD-4F6C-96DF-39F6CF689632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EA9E53-1FAD-4F6C-96DF-39F6CF689632}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

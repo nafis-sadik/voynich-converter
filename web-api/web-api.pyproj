@@ -29,7 +29,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="controllers\AppController.py" />
     <Compile Include="controllers\DownloaderController.py" />
+    <Compile Include="models\ConvertionConfigModel.py" />
     <Compile Include="server.py" />
     <Compile Include="controllers\YouTubeController.py" />
     <Compile Include="controllers\__init__.py" />
@@ -54,7 +56,11 @@
     <Folder Include="models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="requirements.txt" />
+    <ProjectReference Include="..\Repositories\Repositories.pyproj">
+      <Name>Repositories</Name>
+      <Project>{20ea9e53-1fad-4f6c-96df-39f6cf689632}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

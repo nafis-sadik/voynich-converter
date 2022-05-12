@@ -7,14 +7,14 @@ from starlette.staticfiles import StaticFiles
 from controllers import router
 
 app = FastAPI(
-    title='Voynich Converter',
+    title='Halwa Box',
     version='1.0.0'
 )
 
 # Add origins in this array to allow them only
 origins = [
     "http://localhost",
-    "http://localhost:8080",
+    "http://localhost:4200",
 ]
 
 # Add middlewares, origin also comes as middleware
