@@ -104,11 +104,11 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+\web-api\env\
+web-api\venv\
+web-api\ENV\
+web-api\env.bak\
+web-api\venv.bak\
 .\web-api\env\
 
 # Spyder project settings
@@ -131,3 +131,6 @@ dmypy.json
 
 # IDE files
 .vs
+
+# Static folder
+web-api/static

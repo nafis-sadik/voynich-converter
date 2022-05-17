@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="controllers\AppController.py" />
     <Compile Include="controllers\DownloaderController.py" />
+    <Compile Include="controllers\SearchTrendController.py" />
     <Compile Include="models\ConvertionConfigModel.py" />
     <Compile Include="server.py" />
     <Compile Include="controllers\YouTubeController.py" />

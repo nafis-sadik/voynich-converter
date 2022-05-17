@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse
 from pydantic.types import confloat
 import wget
 import threading
+import time
 import moviepy.editor as mp
 from datetime import datetime
 
@@ -19,7 +20,7 @@ def delayed_file_remove(path: str, delay_in_mins: int):
     os.remove(path)
 
 
-def convert_to_mp3(file_path: str, start_time: int, end_time: int, destination_file_name: str):
+def convert_to_mp3(file_path: str, start_time: int, end_time: int):
     clip = mp.VideoFileClip(file_path)
     if end_time == 0:
         end_time = clip.duration
@@ -30,7 +31,7 @@ def convert_to_mp3(file_path: str, start_time: int, end_time: int, destination_f
     return audio_file_path
 
 
-def download_video(url: str):
+def download_file(url: str):
     downloaded_file = wget.download(url, out='./static')
     source_file = source_file_path(downloaded_file)
     os.rename(downloaded_file, source_file)
@@ -43,9 +44,9 @@ def source_file_path(downloaded_file):
 
 @downloader.post('/mp3')
 def download_mp3(config: ConvertionConfigModel):
-    source_file = download_video(config.url)
+    source_file = download_file(config.url)
     if os.path.exists(source_file):
-        audio_file_path = convert_to_mp3(source_file, config.start_time, config.end_time, config.file_name)
+        audio_file_path = convert_to_mp3(source_file, config.start_time, config.end_time)
         os.remove(source_file)
         delete_audio_thread = threading.Thread(target=delayed_file_remove, args=(audio_file_path, 1))
         delete_audio_thread.start()
