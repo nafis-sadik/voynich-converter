@@ -1,3 +1,5 @@
+# Fast API
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -104,12 +106,11 @@ celerybeat.pid
 # Environments
 .env
 .venv
-\web-api\env\
-web-api\venv\
-web-api\ENV\
-web-api\env.bak\
-web-api\venv.bak\
-.\web-api\env\
+web-api/env/
+web-api/venv
+web-api/ENV
+web-api/env.bak
+web-api/venv.bak
 
 # Spyder project settings
 .spyderproject
@@ -134,3 +135,48 @@ dmypy.json
 
 # Static folder
 web-api/static
+
+# Angular
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+front-end/dist
+front-end/tmp
+front-end/out-tsc
+front-end/bazel-out
+
+# Node
+front-end/node_modules
+front-endnpm-debug.log
+front-endyarn-error.log
+
+# IDEs and editors
+front-end/.idea/
+front-end/.project
+front-end/.classpath
+front-end/.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+front-end/.vscode
+!front-end/.vscode/settings.json
+!front-end/.vscode/tasks.json
+!front-end/.vscode/launch.json
+!front-end/.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/front-end/.angular/cache
+front-end/.sass-cache/
+/front-end/connect.lock
+/front-end/coverage
+/front-end/libpeerconnection.log
+front-end/testem.log
+/front-end/typings
+
+# System files
+front-end/.DS_Store
+front-end/Thumbs.db
