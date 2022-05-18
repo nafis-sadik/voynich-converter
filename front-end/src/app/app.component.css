@@ -1,26 +1,17 @@
-.system-container{
-  height: 100vh;
-}
-
-.BurgerIcon{
-  padding: 12px;
-}
-
-#BurgerMenu{
+.top-nav{
   position: relative;
-  top: 0;
-  left: 0;
-  border: none;
-  background: #fff;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-#BurgerMenu:hover{
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+.home{
+  text-decoration: none;
+  color: white;
 }
 
 .system-sidenav {
   padding: 20px;
-  width: 20vw;
+  /*width: 20vw;*/
 }
 
 .router-links{
@@ -35,5 +26,11 @@
 }
 
 .router-links:hover{
+  transition: 1s;
   cursor: pointer;
+  box-shadow: inset 0 0 10px #898989;
+}
+
+#viewport {
+  height: 100vh;
 }

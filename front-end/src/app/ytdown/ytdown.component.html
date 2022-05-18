@@ -1,0 +1,7 @@
+<mat-form-field class="YTUrlContainer" appearance="fill">
+  <mat-label>YouTube Video URL</mat-label>
+  <input matInput type="text" [(ngModel)]="downloadUrl">
+  <button *ngIf="downloadUrl" matSuffix mat-icon-button aria-label="Clear" (click)="downloadUrl=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

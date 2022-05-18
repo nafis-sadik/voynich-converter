@@ -1,7 +1,20 @@
-<mat-drawer-container class="system-container" autosize>
+<mat-drawer-container autosize>
+  <mat-toolbar color="accent" class="top-nav" id="top-nav">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="" class="home">Halwa Box</a>
+    <span class="example-spacer"></span>
+    <button (click)="bookmark()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div id="viewport">
+    <router-outlet></router-outlet>
+  </div>
   <mat-drawer #drawer class="system-sidenav" mode="over">
-    <h2>Halwa Box</h2>
-    <button class="router-links" matRipple [matRippleUnbounded]="false" routerLink="#">
+    <h2>Tool Box</h2>
+    <button class="router-links" matRipple [matRippleUnbounded]="false" routerLink="YouTubeDownloader">
       <span>
         Youtube Downloader
       </span>
@@ -12,14 +25,4 @@
       </span>
     </button>
   </mat-drawer>
-
-  <div>
-    <button id="BurgerMenu" matRipple [matRippleUnbounded]="false" class="mat-elevation-z4" type="button" (click)="drawer.toggle()">
-      <svg class="BurgerIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-           width="24" height="24"
-           viewBox="0 0 24 24"
-           style=" fill:#000000;"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path></svg>
-    </button>
-  </div>
-
 </mat-drawer-container>

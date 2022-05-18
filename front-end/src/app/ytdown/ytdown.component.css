@@ -1,0 +1,7 @@
+.YTUrlContainer{
+  position: relative;
+  width: 60vw;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
