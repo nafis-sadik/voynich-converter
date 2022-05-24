@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {YoutubeVideoDetails} from "./YoutubeVideoDetails";
+
 @Component({
   selector: 'app-ytdown',
   templateUrl: './ytdown.component.html',
   styleUrls: ['./ytdown.component.css']
 })
-
 
 export class YtdownComponent implements OnInit {
   downloadUrl: string = '';
@@ -14,12 +14,20 @@ export class YtdownComponent implements OnInit {
   videoDetails: YoutubeVideoDetails = new YoutubeVideoDetails();
 
   constructor() {
-    this.videoDetails.thumbnail = "https://i.ytimg.com/vi/VAAh4OKyQVc/sddefault.jpg";
-    this.videoDetails.url = "https://youtu.be/VAAh4OKyQVc";
-    this.videoDetails.title = "YouTubers will never tell you this.";
-    this.videoDetails.author = "Jake Tran";
-    this.videoDetails.description = "😈 Watch exclusive 40+ minute documentaries that too controversial to ever be released to the public: https://jake.yt/join \n\n📹 Take a peak at all the private documentaries here: https://jake.yt/hidden-vids\n\n🎥 Business is complicated. Subscribe to curiosity: http://bit.ly/jt-sub\n✨ Follow us on TikTok: https://jake.yt/tiktok\n✉ Be the first to watch new videos with email notifications: http://bit.ly/jt-inbox\n📸 Follow me on IG: @jaketran.io // http://bit.ly/jt-ig\n\nSupport this channel monetarily:\n💻 𝗟𝗮𝗽𝘁𝗼𝗽 𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲 𝗔𝗰𝗮𝗱𝗲𝗺𝘆: Learn exactly how I landed my $40/hr work from home job ($83k/yr) at 19 years old: https://jake.yt/LLAd\n📜 The exact resume I used to get my $40/hr remote web dev job + a lot of bonuses: https://jake.yt/DRBd\n\n✉️ Email me: jake@jaketran.io\n\n📰 Sources & visuals: https://bit.ly/3yB9slc \n\n-----------------------\n\n-----------------------\nKing I Divine - Reflections https://chll.to/240e161f\nPhilanthrope, Leavv - What Was Before https://chll.to/f09a373c\n\nAll materials in these videos are used for educational purposes and fall within the guidelines of fair use. No copyright infringement intended. If you are or represent the copyright owner of materials used in this video and have a problem with the use of said material, please send me an email, jake@jaketran.io, and we can sort it out.\n\nCopyright © 2021 Transcend Visuals, LLC. All rights reserved.\n\nDISCLAIMER:\n\nThis video does not provide investment or economic advice and is not professional advice (legal, accounting, tax).  The owner of this content is not an investment advisor.  Discussion of any securities, trading, or markets is incidental and solely for entertainment purposes.  Nothing herein shall constitute a recommendation, investment advice, or an opinion on suitability.  The information in this video is provided as of the date of its initial release.  The owner of this video expressly disclaims all representations or warranties of accuracy.  The owner of this video claims all intellectual property rights, including copyrights, of and related to, this video.\n\nAFFILIATE DISCLOSURE: Some of the links in this video's description are affiliate links, meaning, at no additional cost to you, the owner may earn a commission if you click through, make a purchase, and/or opt-in.";
+  }
+
+  ngOnInit(): void {
+  }
+
+  getVideoUrls() : void {
+    this.videoDetails.thumbnail = "https://i.ytimg.com/vi/VAAh4OKyQVc/sddefault.jpg"
+    this.videoDetails.url = "https://youtu.be/VAAh4OKyQVc"
+    this.videoDetails.title = "YouTubers will never tell you this."
+    this.videoDetails.author = "Jake Tran"
+    this.videoDetails.description = "😈 Watch exclusive 40+ minute documentaries that too controversial to ever be released to the public: https://jake.yt/join \n\n📹 Take a peak at all the private documentaries here: https://jake.yt/hidden-vids\n\n🎥 Business is complicated. Subscribe to curiosity: http://bit.ly/jt-sub\n✨ Follow us on TikTok: https://jake.yt/tiktok\n✉ Be the first to watch new videos with email notifications: http://bit.ly/jt-inbox\n📸 Follow me on IG: @jaketran.io // http://bit.ly/jt-ig\n\nSupport this channel monetarily:\n💻 𝗟𝗮𝗽𝘁𝗼𝗽 𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲 𝗔𝗰𝗮𝗱𝗲𝗺𝘆: Learn exactly how I landed my $40/hr work from home job ($83k/yr) at 19 years old: https://jake.yt/LLAd\n📜 The exact resume I used to get my $40/hr remote web dev job + a lot of bonuses: https://jake.yt/DRBd\n\n✉️ Email me: jake@jaketran.io\n\n📰 Sources & visuals: https://bit.ly/3yB9slc \n\n-----------------------\n\n-----------------------\nKing I Divine - Reflections https://chll.to/240e161f\nPhilanthrope, Leavv - What Was Before https://chll.to/f09a373c\n\nAll materials in these videos are used for educational purposes and fall within the guidelines of fair use. No copyright infringement intended. If you are or represent the copyright owner of materials used in this video and have a problem with the use of said material, please send me an email, jake@jaketran.io, and we can sort it out.\n\nCopyright © 2021 Transcend Visuals, LLC. All rights reserved.\n\nDISCLAIMER:\n\nThis video does not provide investment or economic advice and is not professional advice (legal, accounting, tax).  The owner of this content is not an investment advisor.  Discussion of any securities, trading, or markets is incidental and solely for entertainment purposes.  Nothing herein shall constitute a recommendation, investment advice, or an opinion on suitability.  The information in this video is provided as of the date of its initial release.  The owner of this video expressly disclaims all representations or warranties of accuracy.  The owner of this video claims all intellectual property rights, including copyrights, of and related to, this video.\n\nAFFILIATE DISCLOSURE: Some of the links in this video's description are affiliate links, meaning, at no additional cost to you, the owner may earn a commission if you click through, make a purchase, and/or opt-in."
     this.videoDetails.streams = []
+    this.videoDetails.videoStreams = []
+    this.videoDetails.audioStreams = []
     this.videoDetails.streams.push(
       {
         "_monostate": {
@@ -243,9 +251,14 @@ export class YtdownComponent implements OnInit {
         "is_hdr": false,
         "is_live": false
       })
-  }
-
-  ngOnInit(): void {
+    for (let i = 0; i < this.videoDetails.streams.length; i++){
+      if(this.videoDetails.streams[i].video_codec != null){
+        this.videoDetails.videoStreams.push(this.videoDetails.streams[i])
+      }
+      else {
+        this.videoDetails.audioStreams.push(this.videoDetails.streams[i])
+      }
+    }
   }
 
 }

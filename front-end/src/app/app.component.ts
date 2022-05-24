@@ -22,9 +22,7 @@ export class AppComponent {
     let viewport = document.getElementById('viewport');
     let topNav = document.getElementById('top-nav');
     if(viewport != null && topNav != null){
-      console.log(viewport.offsetHeight);
       viewport.style.height = (window.innerHeight - topNav.offsetHeight).toString() + 'px';
-      console.log(viewport.offsetHeight);
     }
   }
 }

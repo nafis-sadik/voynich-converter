@@ -180,3 +180,13 @@ front-end/testem.log
 # System files
 front-end/.DS_Store
 front-end/Thumbs.db
+
+# Individual folders
+.vs/HalwaBox/v17/.suo
+.vs/HalwaBox/v17/fileList.bin
+web-api/models/__pycache__/__init__.cpython-310.pyc
+web-api/models/__pycache__/YoutubeVideoDetails.cpython-310.pyc
+web-api/controllers/__pycache__/YouTubeController.cpython-310.pyc
+web-api/controllers/__pycache__/SearchTrendController.cpython-310.pyc
+web-api/controllers/__pycache__/DownloaderController.cpython
+web-api/controllers/__pycache__/DownloaderController.cpython-310.pyc

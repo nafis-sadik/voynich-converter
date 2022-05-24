@@ -17,33 +17,37 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { YtdownComponent } from './ytdown/ytdown.component';
 import { HomeComponent } from './home/home.component';
 import {MatSelectModule} from "@angular/material/select";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { SearchTrendsComponent } from './search-trends/search-trends.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YtdownComponent,
-    HomeComponent
+    HomeComponent,
+    SearchTrendsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatRippleModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatRippleModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatInputModule,
+        FormsModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatGridListModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

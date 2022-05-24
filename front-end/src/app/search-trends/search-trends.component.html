@@ -1,0 +1,27 @@
+<section id="Container">
+  <mat-grid-list cols="4" rowHeight="150px">
+    <mat-grid-tile colspan="4" rowspan="1">
+      <mat-form-field appearance="standard" class="ytUrlField">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" [(ngModel)]="keywordString">
+        <button *ngIf="keywordString" matSuffix mat-icon-button aria-label="Clear" (click)="keywordString=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button matSuffix mat-icon-button aria-label="Download" (click)="getKeywordsResult()"><mat-icon>search</mat-icon></button>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile gutterSize="2" colspan="2" rowspan="1">
+      <h4>Select Region</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Regions</mat-label>
+        <mat-select [(ngModel)]="countryCode" name="StreamSelection">
+          <mat-option>Select One</mat-option>
+          <mat-option *ngFor="let stream of countrySelectionMenu"  [value]="stream.code">
+            {{stream.CountryName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
+<div id="pie"></div>

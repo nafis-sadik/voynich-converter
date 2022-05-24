@@ -1,22 +1,38 @@
-<div class="YTUrlContainer">
-  <mat-form-field appearance="standard" class="ytUrlField">
-    <mat-label>YouTube Video URL</mat-label>
-    <input matInput type="text" [(ngModel)]="downloadUrl">
-    <button *ngIf="downloadUrl" matSuffix mat-icon-button aria-label="Clear" (click)="downloadUrl=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
-  <button mat-raised-button color="accent"><mat-icon>download</mat-icon></button>
-</div>
-<div id="video-details">
-  <h4>Select Download Format</h4>
-  <mat-form-field appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="StreamSelection">
-      <mat-option *ngFor="let stream of videoDetails.streams"  [value]="stream.url">
-        {{stream.resolution + ' ' + stream.subtype}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-
+<section id="Container">
+  <mat-grid-list cols="4" rowHeight="150px">
+    <mat-grid-tile colspan="4" rowspan="1">
+      <mat-form-field appearance="standard" class="ytUrlField">
+        <mat-label>YouTube Video URL</mat-label>
+        <input matInput type="text" [(ngModel)]="downloadUrl">
+        <button *ngIf="downloadUrl" matSuffix mat-icon-button aria-label="Clear" (click)="downloadUrl=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button matSuffix mat-icon-button aria-label="Download" (click)="getVideoUrls()"><mat-icon>download</mat-icon></button>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile gutterSize="2" colspan="2" rowspan="1">
+      <h4>Select Format</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Video Resolutions</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="StreamSelection">
+          <mat-option>Select One</mat-option>
+          <mat-option *ngFor="let stream of videoDetails.videoStreams"  [value]="stream.url">
+            {{stream.resolution + ' ' + stream.subtype}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="1">
+      <h4>Select Format</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Audio Bitrates</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="StreamSelection">
+          <mat-option>Select One</mat-option>
+          <mat-option *ngFor="let stream of videoDetails.audioStreams"  [value]="stream.url">
+            {{stream.bitrate}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>

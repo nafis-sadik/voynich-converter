@@ -18,7 +18,12 @@ async def video_details(video_details: YoutubeVideoDetails):
         video_details.length = video.length
         video_details.views = video.views
         video_details.thumbnail = video.thumbnail_url
-        video_details.streams = video.streams.order_by('resolution').desc()
+
+        video_details.streams = [val for val in video.streams.fmt_streams if val.audio_codec is not None]
+
+        #video_details.streams = video.streams.order_by('resolution').desc()
+        
+            
         return video_details
     except Exception as e:
         return str(e)

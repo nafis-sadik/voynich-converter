@@ -8,4 +8,6 @@ export class YoutubeVideoDetails{
   views: string = '';
   thumbnail: string = '';
   streams: any;
+  videoStreams: any;
+  audioStreams: any;
 }
